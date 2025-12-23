@@ -1,0 +1,423 @@
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0a2e38;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+
+.fon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    opacity: 0.8;
+}
+
+.sniezinki {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.sniezinka {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: padanie linear infinite;
+}
+
+@keyframes padanie {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+.elka-konteiner {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 500px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.elka {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 450px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 450"><path d="M150 20 L250 200 L200 200 L250 350 L200 350 L250 450 L50 450 L100 350 L50 350 L100 200 L50 200 Z" fill="%230d5432"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.elka-fonarik {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: all;
+    transition: all 0.3s;
+    z-index: 2;
+}
+
+.elka-fonarik.vkluchen {
+    box-shadow: 0 0 15px 5px;
+}
+
+.kontener {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    margin: 20px 0 40px;
+}
+
+h1 {
+    font-family: 'Marck Script', cursive;
+    font-size: 64px;
+    color: #ffde59;
+    text-shadow: 0 0 20px rgba(255, 222, 89, 0.8);
+    margin-bottom: 10px;
+}
+
+.podzagolovok {
+    font-size: 24px;
+    color: #b3e5fc;
+    margin-bottom: 10px;
+}
+
+.timer-sektsiya {
+    background-color: rgba(10, 46, 56, 0.8);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    width: 60%;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 3px solid #ffde59;
+}
+
+.timer-zagolovok {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #ffde59;
+}
+
+.timer-konteiner {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.timer-edinitsa {
+    background: linear-gradient(145deg, #0c3540, #08232c);
+    border-radius: 15px;
+    padding: 20px 10px;
+    min-width: 130px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid #4fc3f7;
+    position: relative;
+    overflow: hidden;
+}
+
+.timer-edinitsa::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #ffde59, #4fc3f7, #ff4081);
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.5;
+}
+
+.timer-znachenie {
+    font-size: 56px;
+    font-weight: 700;
+    color: #ffde59;
+    text-shadow: 0 0 10px rgba(255, 222, 89, 0.7);
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.timer-nazvanie {
+    font-size: 19px;
+    color: #b3e5fc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.vzaimodeistvie-sektsiya {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 50%;
+    max-width: 900px;
+    margin-bottom: 40px;
+}
+
+.vzaimodeistvie-karta {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.vzaimodeistvie-karta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.karte-zagolovok {
+    font-size: 29px;
+    color: #4fc3f7;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.podarki-konteiner {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.podarok {
+    width: 100px;
+    height: 100px;
+    background-color: #ff4081;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.podarok:hover {
+    transform: scale(1.1);
+}
+
+.podarok i {
+    font-size: 40px;
+    color: #fff;
+}
+
+.podarok.otkrit {
+    background-color: #4fc3f7;
+}
+
+.podarok-soobshenie {
+    position: absolute;
+    bottom: -40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.podarok:hover .podarok-soobshenie {
+    opacity: 1;
+}
+
+.osveshenie-konteiner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.svetilnik {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.svetilnik.vkluchen {
+    box-shadow: 0 0 20px 5px;
+}
+
+.tema-pereklyuchatel {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.tema-knopka {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tema-knopka.aktivna {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.tema-klassicheskaya {
+    background-color: #0a2e38;
+    color: white;
+    border: 2px solid #ffde59;
+}
+
+.tema-zimniaya {
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border: 2px solid #1565c0;
+}
+
+.tema-volshebnaya {
+    background: linear-gradient(45deg, #ff4081, #7b1fa2);
+    color: white;
+    border: 2px solid #ffde59;
+}
+
+.igra-konteiner {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.igra-obekt {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.igra-obekt:hover {
+    transform: scale(1.2);
+}
+
+.igra-obekt i {
+    font-size: 32px;
+    color: #ffde59;
+}
+
+.igra-rezultat {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 19.2px;
+}
+
+@media (max-width: 500px) {
+    .kontener {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 48px;
+    }
+    .podzagolovok {
+        font-size: 19.2px;
+    }
+    .timer-zagolovok {
+        font-size: 24px;
+    }
+    .timer-znachenie {
+        font-size: 40px;
+    }
+    .timer-nazvanie {
+        font-size: 16px;
+    }
+    .karte-zagolovok {
+        font-size: 24px;
+    }
+    .podarok {
+        width: 80px;
+        height: 80px;
+    }
+    .podarok i {
+        font-size: 32px;
+    }
+    .svetilnik {
+        width: 30px;
+        height: 30px;
+    }
+    .tema-knopka {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+    .igra-konteiner {
+        height: 150px;
+    }
+    .vzaimodeistvie-sektsiya {
+        width: 100%;
+    }
+    .igra-obekt {
+        width: 40px;
+        height: 40px;
+    }
+    .igra-obekt i {
+        font-size: 24px;
+    }
+    .elka-konteiner {
+        width: 250px;
+        height: 350px;
+    }
+    .elka {
+        width: 200px;
+        height: 300px;
+    }
+}
